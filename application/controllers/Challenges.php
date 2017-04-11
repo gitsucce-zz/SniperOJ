@@ -162,7 +162,7 @@ class Challenges extends CI_Controller {
 
     public function is_admin($userID)
     {
-        $usertype = $this->user_model->get_usertype();
+        $usertype = $this->user_model->get_usertype($userID);
         if ($usertype === 1){
             return true;
         }else{
