@@ -259,7 +259,7 @@ class User extends CI_Controller {
 								if($this->check_verified($username)){
 									// login success
 									$this->load->view('templates/header',  array('navigation_bar' => $this->config->item('navigation_bar_user')));
-									$this->load->view('notice/view', array('message' => 'Login success'));
+									// $this->load->view('notice/view', array('message' => 'Login success'));
 									$this->load->view('user/profile');
 									$this->load->view('templates/footer');
 									// set session
