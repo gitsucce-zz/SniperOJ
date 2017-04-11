@@ -258,14 +258,15 @@ class User extends CI_Controller {
 							if($this->do_login($username, $password)){
 								if($this->check_verified($username)){
 									// login success
-									$this->load->view('templates/header',  array('navigation_bar' => $this->config->item('navigation_bar_user')));
+									// $this->load->view('templates/header',  array('navigation_bar' => $this->config->item('navigation_bar_user')));
 									// $this->load->view('notice/view', array('message' => 'Login success'));
-									$this->load->view('challenges/view');
-									$this->load->view('templates/footer');
+									// $this->load->view('user/profile');
+									// $this->load->view('templates/footer');
 									// set session
 									$this->user_model->set_session($username);
 									// update db token_alive_time
 									$this->user_model->set_token_alive_time($userID, $token_alive_time + $this->config->item('sess_expiration'));
+									redirect("/challenges/view")
 								}else{
 									// Account have not verified
 									$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
