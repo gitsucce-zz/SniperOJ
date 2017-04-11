@@ -266,7 +266,7 @@ class User extends CI_Controller {
 									$this->user_model->set_session($username);
 									// update db token_alive_time
 									$this->user_model->set_token_alive_time($userID, $token_alive_time + $this->config->item('sess_expiration'));
-									redirect("/challenges/view")
+									redirect("/challenges/view");
 								}else{
 									// Account have not verified
 									$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
