@@ -23,8 +23,8 @@
         <td><?php echo $challenge_item['type']; ?></td>
         <td><?php echo date('Y-m-d H:i:s', $challenge_item['online_time']); ?></td>
         <td>0 times</td>
-        <td><?php echo $challenge_item['resource']; ?></td>
-        <td><?php echo $challenge_item['document']; ?></td>
+        <td><a href="<?php echo $challenge_item['resource']; ?>">下载</a></td>
+        <td><a href="<?php echo $challenge_item['document']; ?>">参考资料</a></td>
         <td><form action="/challenges/submit" method="POST">
             <input type="text" name="flag">
             <input type="hidden" name="challengeID" value="<?php echo html_escape($challenge_item['challengeID']);?>">
