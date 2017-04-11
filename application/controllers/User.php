@@ -260,7 +260,7 @@ class User extends CI_Controller {
 									// login success
 									$this->load->view('templates/header',  array('navigation_bar' => $this->config->item('navigation_bar_user')));
 									// $this->load->view('notice/view', array('message' => 'Login success'));
-									$this->load->view('user/profile');
+									$this->load->view('challenges/view');
 									$this->load->view('templates/footer');
 									// set session
 									$this->user_model->set_session($username);
