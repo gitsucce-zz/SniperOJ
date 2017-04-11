@@ -202,7 +202,7 @@ class Challenges extends CI_Controller {
                 {
                         $this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_user')));
                         $this->load->view('notice/view', array('message' => 'Please check your input! You have forgot something!'));
-                        $this->load->view('challenges/create', $data);
+                        $this->load->view('challenges/create');
                         $this->load->view('templates/footer');
                 }
                 else
