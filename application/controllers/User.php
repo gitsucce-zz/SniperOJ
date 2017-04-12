@@ -422,8 +422,10 @@ class User extends CI_Controller {
 	public function profile()
 	{
 		if($this->is_logined()){
+			$userID = $this->session->userID;
+			$user_data = $this->user_model->get_user_data($userID);
 			$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_user')));
-			$this->load->view('user/profile');
+			$this->load->view('user/profile', $user_data);
 			$this->load->view('templates/footer');
 		}else{
 			$this->session->sess_destroy();
@@ -434,8 +436,9 @@ class User extends CI_Controller {
 	public function score()
 	{
 		if($this->is_logined()){
+			$score_data = array('scores' => $this->user_model->get_all_score(),);
 			$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_user')));
-			$this->load->view('user/score');
+			$this->load->view('user/score', $score_data);
 			$this->load->view('templates/footer');
 		}else{
 			$this->session->sess_destroy();

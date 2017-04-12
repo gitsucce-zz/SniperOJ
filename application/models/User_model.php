@@ -205,4 +205,19 @@ class User_model extends CI_Model {
         $this->session->set_userdata($data);
     }
 
+    // get_user_data($userID)
+    public function get_user_data($userID)
+    {
+        # code...
+    }
+
+    // get_all_score
+    public function get_all_score()
+    {
+        $query = $this->db->select(array('username','college','score',))
+                ->get('users');
+        $result = $query->result_array();
+        return $result;
+    }
+
 }
