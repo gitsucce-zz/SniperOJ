@@ -1,8 +1,3 @@
-
-        </div>
-
-      </div>
-
     </div>
     
     <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">

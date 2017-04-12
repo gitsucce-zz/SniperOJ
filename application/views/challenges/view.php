@@ -1,7 +1,8 @@
+<h1>Challenges</h1>
+
 <div class="challenges">
   
   <table class="table" style="font-size: 20px">
-    <caption>Challenges</caption>
     <thead>
       <tr>
         <th>Name</th>

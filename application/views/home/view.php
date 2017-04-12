@@ -1,4 +1,4 @@
-<div class="inner cover">
+<div class="home-content">
 	<h1 class="cover-heading">Capture The Flag</h1>
 	<p class="lead">SniperOJ is an open source and free CTF online judge system , now it is developing... If you have any questions , please join in the QQ group : 514782018</p>
 	Github : https://github.com/WangYihang/SniperOJ<br>
