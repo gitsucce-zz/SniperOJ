@@ -1721,7 +1721,7 @@ span.border.two:after {
 		margin: 2em auto 0;
 	}
 	.header-right {
-	    padding-left:0em;
+	  padding-left:0em;
 		float: left;
 		width: 100%;
 		padding: 1em 1em 0em 1em;

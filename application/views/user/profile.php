@@ -1,6 +1,6 @@
 <link href="../../assets/css/style.css" rel='stylesheet' type='text/css' />
 <div class="banner-info">
-	<div class="col-md-7 header-right" style="color:#111;">
+	<div class="col-md-7 header-right" style="color:#111;text-align:initial;padding-left: 400px;">
 		<h1>Profile</h1>
 		<ul class="address">
 		
