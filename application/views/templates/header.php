@@ -33,6 +33,23 @@
 	</head>
 
 	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		    <div class="container-fluid">
+			    <div class="navbar-header">
+			        <a class="navbar-brand" href="#">Sniper OJ</a>
+			    </div>
+			    <div class="pull-right">
+			        <ul class="nav navbar-nav">
+				        <?php
+				        	foreach ($navigation_bar as $key => $value) {
+				        		echo "<li><a href='$value'>$key</a></li>";
+				        	}
+				        	echo "\n";
+				        ?>
+			        </ul>
+			    </div>
+		    </div>
+		</nav>
 
 		<div class="site-wrapper">
 
@@ -41,20 +58,3 @@
 
 				<div class="cover-container">
 
-					<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-					    <div class="container-fluid">
-						    <div class="navbar-header">
-						        <a class="navbar-brand" href="#">Sniper OJ</a>
-						    </div>
-						    <div class="pull-right">
-						        <ul class="nav navbar-nav">
-							        <?php
-							        	foreach ($navigation_bar as $key => $value) {
-							        		echo "<li><a href='$value'>$key</a></li>";
-							        	}
-							        	echo "\n";
-							        ?>
-						        </ul>
-						    </div>
-					    </div>
-					</nav>

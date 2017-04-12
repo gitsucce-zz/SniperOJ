@@ -47,9 +47,11 @@ body {
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
+  height: 100%; 
 }
 .cover-container {
   margin-right: auto;
+  height: 100%; 
   margin-left: auto;
 }
 
@@ -182,4 +184,8 @@ input{
   vertical-align: middle;
   text-align: center;
   background:#444;
+}
+
+.challenges{
+  margin-top: 0px;
 }

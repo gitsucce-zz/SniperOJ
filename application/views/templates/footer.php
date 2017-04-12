@@ -1,13 +1,15 @@
-          <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-            <em>&copy; 2017</em><br>
-            Contact : admin@sniperoj.cn
-          </nav>
 
         </div>
 
       </div>
 
     </div>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+      <em>&copy; 2017</em><br>
+      Contact : admin@sniperoj.cn
+    </nav>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
