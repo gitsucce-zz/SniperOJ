@@ -39,6 +39,7 @@ CREATE TABLE `submit_log` (
   `userID`int NOT NULL,
   `flag` varchar(64) NOT NULL,
   `submit_time` int DEFAULT 0,
+  `is_current` tinyint NOT NULL DEFAULT 0,
   PRIMARY KEY (`submitID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
