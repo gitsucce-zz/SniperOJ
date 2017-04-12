@@ -9,7 +9,7 @@ $config = array(
 		"Register" => "/user/register",
 	),
 	'navigation_bar_user' => array(
-		"Home" => "/", 
+		// "Home" => "/", 
 		// "News" => "/news", 
 		"Challenges" => "/challenges/view", 
 		"Score" => "/user/score", 
@@ -19,7 +19,7 @@ $config = array(
 		"Logout" => "/user/logout",
 	),
 	'navigation_bar_admin' => array(
-		"Home" => "/", 
+		// "Home" => "/", 
 		// "News" => "/news", 
 		"Challenges" => "/challenges/view", 
 		"CreateChallenges" => "/challenges/create", 
