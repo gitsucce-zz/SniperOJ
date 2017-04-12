@@ -49,5 +49,34 @@
   height:240px;
   border-radius:120px">
 	</div>
-  </div>
 </div>
+
+<table class="table table-hover">
+  <caption>Submit log</caption>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ChallengeName</th>
+      <th>Flag</th>
+      <th>Time</th>
+      <th>Current</th>
+    </tr>
+  </thead>
+  <tbody>
+	  <?php 
+		  for ($i=0; $i < count($submit_log); $i++) { 
+			echo "<tr>";
+			echo "<td>".(count($submit_log) - ($i))."</td>";
+			echo "<td>".$submit_log[$i]['challengeName']."</td>";
+			echo "<td>".$submit_log[$i]['flag']."</td>";
+			echo "<td>".date("Y-m-d H:i:s", $submit_log[$i]['submit_time'])."</td>";
+			if ($submit_log[$i]['is_current'] == 1){
+				echo "<td>√</td>";
+			}else{
+				echo "<td>×</td>";
+			}
+			echo "</tr>";
+		  }
+	  ?>
+  </tbody>
+</table>

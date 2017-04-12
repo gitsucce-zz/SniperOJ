@@ -5,6 +5,7 @@ class User extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+        $this->load->model('challenges_model');
 		$this->load->model('user_model');
 		$this->load->helper('url_helper');
 		$this->config->load('navigation_bar');
@@ -425,7 +426,15 @@ class User extends CI_Controller {
 	{
 		if($this->is_logined()){
 			$userID = $this->session->userID;
-			$user_data = array('user_data' => $this->user_model->get_user_data($userID),);
+			$submit_log = $this->user_model->get_user_submit_log($userID);
+			for ($i=0; $i < count($submit_log); $i++) { 
+				$challengeID = $submit_log[$i]["challengeID"];
+				$submit_log[$i]["challengeName"] = $this->challenges_model->get_challenge_name($challengeID);
+			}
+			$user_data = array(
+				'user_data' => $this->user_model->get_user_data($userID),
+				'submit_log' => $submit_log,
+			);
 			$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_user')));
 			$this->load->view('user/profile', $user_data);
 			$this->load->view('templates/footer');

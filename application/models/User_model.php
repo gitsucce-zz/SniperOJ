@@ -226,6 +226,14 @@ class User_model extends CI_Model {
         return $user_data;
     }
 
+    public function get_user_submit_log($userID){
+        $query = $this->db->select(array('challengeID','flag','submit_time','is_current'))
+        ->order_by('submit_time','desc')
+        ->get('submit_log');
+        $result = $query->result_array();
+        return $result;
+    }
+
     // get_all_score
     public function get_all_score()
     {
