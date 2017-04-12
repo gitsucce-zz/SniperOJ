@@ -284,7 +284,7 @@ class User extends CI_Controller {
 						}else{
 							// password illegal
 							$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-							$this->load->view('notice/view', array('message' => 'Password illegal!'));
+							$this->load->view('notice/view', array('message' => '密码长度必须大于 6 小于等于 16 个字符'));
 							$this->load->view('user/login');
 							$this->load->view('templates/footer');
 						}
@@ -378,7 +378,7 @@ class User extends CI_Controller {
 					}else{
 						// password illegal
 						$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-						$this->load->view('notice/view', array('message' => 'Password illegal!'));
+						$this->load->view('notice/view', array('message' => '密码长度必须大于 6 小于等于 16 个字符'));
 						$this->load->view('user/register');
 						$this->load->view('templates/footer');
 					}
