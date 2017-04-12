@@ -172,7 +172,7 @@ class Challenges extends CI_Controller {
 
     public function do_create($new_challenge)
     {
-        if($this->db->insert('challenges', $data)){
+        if($this->db->insert('challenges', $new_challenge)){
             return true;
         }else{
             return false;
@@ -220,11 +220,13 @@ class Challenges extends CI_Controller {
                     );
 
                     if ($this->do_create($new_challenge)) {
+                        $data['challenges'] = $this->challenges_model->get_all_challenges();
                         $this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_user')));
                         $this->load->view('notice/view', array('message' => 'Create challenge success!'));
                         $this->load->view('challenges/view', $data);
                         $this->load->view('templates/footer');
                     }else{
+                        $data['challenges'] = $this->challenges_model->get_all_challenges();
                         $this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_user')));
                         $this->load->view('notice/view', array('message' => 'Create challenge error! Please contact admin@sniperoj.cn'));
                         $this->load->view('challenges/create', $data);
