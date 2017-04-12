@@ -385,7 +385,7 @@ class User extends CI_Controller {
 				}else{
 					// username illegal
 					$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-					$this->load->view('notice/view', array('message' => 'Username illegal!'));
+						$this->load->view('notice/view', array('message' => '用户名只可以是字母和数字的组合 , 请不要在用户名中使用符号!'));
 					$this->load->view('user/register');
 					$this->load->view('templates/footer');
 				}
