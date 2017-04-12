@@ -33,7 +33,6 @@ class Challenges extends CI_Controller {
             // is overdue
             $userID = $this->session->userID;
             $token_alive_time = $this->user_model->get_token_alive_time($userID);
-
             if ($this->is_overdue($token_alive_time)){
                 return true;
             }else{
