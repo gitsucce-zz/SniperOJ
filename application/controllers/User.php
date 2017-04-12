@@ -14,6 +14,7 @@ class User extends CI_Controller {
 		$this->load->library('session');
 		$this->load->helper('email');
 		$this->load->helper('url');
+		$this->load->language("error");
 	}
 
 
@@ -269,14 +270,16 @@ class User extends CI_Controller {
 								}else{
 									// Account have not verified
 									$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-									$this->load->view('notice/view', array('message' => 'Account have not verified!'));
+									$this->load->view('notice/view', array('message' => '请激活您的账号!'));
 									$this->load->view('user/login');
 									$this->load->view('templates/footer');
 								}
 							}else{
 								// login failed, must be password error!
 								$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-								$this->load->view('notice/view', array('message' => 'Login failed!'));
+								// $this->load->view('notice/view', array('message' => '登录失败!'));
+								$this->load->view('notice/view', array('message' => 
+									$this->lang->line('LOGIN_FAILED')));
 								$this->load->view('user/login');
 								$this->load->view('templates/footer');
 							}
@@ -297,7 +300,7 @@ class User extends CI_Controller {
 				}else{
 					// verify captcha failed
 					$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-						$this->load->view('notice/view', array('message' => 'Captcha error!'));
+						$this->load->view('notice/view', array('message' => '验证码错误!'));
 					$this->load->view('user/login');
 					$this->load->view('templates/footer');
 				}
@@ -406,13 +409,13 @@ class User extends CI_Controller {
 		if($this->do_active($active_code)){
 			// active success
 			$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-			$this->load->view('notice/view', array('message' => 'Active success'));
+			$this->load->view('notice/view', array('message' => '激活成功!'));
 			$this->load->view('user/login');
 			$this->load->view('templates/footer');
 		}else{
 			// active failed
 			$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-			$this->load->view('notice/view', array('message' => 'Active failed'));
+			$this->load->view('notice/view', array('message' => '激活失败!'));
 			$this->load->view('user/login');
 			$this->load->view('templates/footer');
 		}
