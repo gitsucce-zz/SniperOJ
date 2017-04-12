@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config = array(
 	'navigation_bar_visitor' => array(
 		"Home" => "/", 
-		"News" => "/news", 
+		// "News" => "/news", 
 		"Login" => "/user/login", 
 		"Register" => "/user/register",
 	),
