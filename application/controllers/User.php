@@ -19,7 +19,7 @@ class User extends CI_Controller {
 
 	public function check_username($username)
 	{
-	    if (strlen($username) > 16 || strlen($username) < 6) {
+	    if (strlen($username) > 16 || strlen($username) < 4) {
 	        // echo "username <= 16 chars >=6";
 	        return false;
 	    }
