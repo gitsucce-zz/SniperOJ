@@ -423,7 +423,7 @@ class User extends CI_Controller {
 	{
 		if($this->is_logined()){
 			$userID = $this->session->userID;
-			$user_data = $this->user_model->get_user_data($userID);
+			$user_data = array('user_data' => $this->user_model->get_user_data($userID),);
 			$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_user')));
 			$this->load->view('user/profile', $user_data);
 			$this->load->view('templates/footer');

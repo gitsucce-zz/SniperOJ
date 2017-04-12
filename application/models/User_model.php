@@ -57,6 +57,11 @@ class User_model extends CI_Model {
         return intval($result['registe_time']);
     }
 
+    public function get_registe_time_human($userID)
+    {
+        return date("Y-m-d h:i:sa", $this->get_registe_time($userID));
+    }
+
     public function get_registe_ip($userID)
     {
         $query = $this->db->get_where('users', array('userID' => $userID));
@@ -205,10 +210,20 @@ class User_model extends CI_Model {
         $this->session->set_userdata($data);
     }
 
+
     // get_user_data($userID)
     public function get_user_data($userID)
     {
-        # code...
+        $user_data = array(
+            'userID' => $userID, 
+            'username' => $this->get_username($userID), 
+            'score' => $this->get_score($userID), 
+            'college' => $this->get_college($userID), 
+            'email' => $this->get_email($userID), 
+            'registe_time' => $this->get_registe_time_human($userID), 
+            'registe_ip' => $this->get_registe_ip($userID), 
+        );
+        return $user_data;
     }
 
     // get_all_score
