@@ -20,7 +20,6 @@ class User extends CI_Controller {
 	public function check_username($username)
 	{
 	    if (strlen($username) > 16 || strlen($username) < 4) {
-	        // echo "username <= 16 chars >=6";
 	        return false;
 	    }
 	    if(preg_match("/[\',.:;*?~`!@#$%^&+=)(<>{}]|\]|\[|\/|\\\|\"|\|/",$username)){ 
@@ -284,14 +283,14 @@ class User extends CI_Controller {
 						}else{
 							// password illegal
 							$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-							$this->load->view('notice/view', array('message' => '密码长度必须大于 6 小于等于 16 个字符'));
+							$this->load->view('notice/view', array('message' => '密码长度必须大于等于 6 小于等于 16 个字符'));
 							$this->load->view('user/login');
 							$this->load->view('templates/footer');
 						}
 					}else{
 						// username illegal
 						$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-						$this->load->view('notice/view', array('message' => '用户名只可以是字母和数字的组合 , 请不要在用户名中使用符号!'));
+						$this->load->view('notice/view', array('message' => '用户名只可以是字母和数字的组合 , 请不要在用户名中使用符号! 长度大于等于 4 字符 , 小于等于 16 个字符'));
 						$this->load->view('user/login');
 						$this->load->view('templates/footer');
 					}
@@ -378,14 +377,14 @@ class User extends CI_Controller {
 					}else{
 						// password illegal
 						$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-						$this->load->view('notice/view', array('message' => '密码长度必须大于 6 小于等于 16 个字符'));
+						$this->load->view('notice/view', array('message' => '密码长度必须大于等于 6 小于等于 16 个字符'));
 						$this->load->view('user/register');
 						$this->load->view('templates/footer');
 					}
 				}else{
 					// username illegal
 					$this->load->view('templates/header', array('navigation_bar' => $this->config->item('navigation_bar_visitor')));
-						$this->load->view('notice/view', array('message' => '用户名只可以是字母和数字的组合 , 请不要在用户名中使用符号!'));
+					$this->load->view('notice/view', array('message' => '用户名只可以是字母和数字的组合 , 请不要在用户名中使用符号! 长度大于等于 4 字符 , 小于等于 16 个字符'));
 					$this->load->view('user/register');
 					$this->load->view('templates/footer');
 				}
